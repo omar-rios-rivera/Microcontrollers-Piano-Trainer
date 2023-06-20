@@ -1,0 +1,486 @@
+******************************************************************************
+                  TI ARM Linker Unix v20.2.5                   
+******************************************************************************
+>> Linked Sat Jun 18 19:53:40 2022
+
+OUTPUT FILE NAME:   <MyM_ProyectoFinalOmar.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00003ea1
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00100000  00003ff8  000fc008  R  X
+  SRAM                  20000000   00040000  0000026d  0003fd93  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00003ff8   00003ff8    r-x
+  00000000    00000000    00000208   00000208    r-- .intvecs
+  00000208    00000208    00003d38   00003d38    r-x .text
+  00003f40    00003f40    00000080   00000080    r-- .const
+  00003fc0    00003fc0    00000038   00000038    r-- .cinit
+20000000    20000000    00000270   00000000    rw-
+  20000000    20000000    00000200   00000000    rw- .stack
+  20000200    20000200    0000005d   00000000    rw- .bss
+  20000260    20000260    00000010   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    00000208     
+                  00000000    00000208     tm4c1294ncpdt_startup_ccs.obj (.intvecs)
+
+.text      0    00000208    00003d38     
+                  00000208    0000358c     main.obj (.text)
+                  00003794    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.asm.obj (.text)
+                  0000394a    000000fc                                   : fd_mul_t2.asm.obj (.text)
+                  00003a46    00000002     --HOLE-- [fill = 0]
+                  00003a48    000000f8                                   : s_floor.c.obj (.text:floor)
+                  00003b40    000000c4                                   : s_round.c.obj (.text:round)
+                  00003c04    0000009c                                   : memcpy_t2.asm.obj (.text)
+                  00003ca0    00000086                                   : fd_cmp_t2.asm.obj (.text:__aeabi_cdcmple)
+                  00003d26    00000086                                   : fd_cmp_t2.asm.obj (.text:__aeabi_cdrcmple)
+                  00003dac    00000068                                   : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00003e14    00000048                                   : fd_toi_t2.asm.obj (.text)
+                  00003e5c    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00003ea0    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  00003ed4    0000002e                                   : i_tofd_t2.asm.obj (.text)
+                  00003f02    0000001c                                   : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  00003f1e    0000000e                                   : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00003f2c    0000000c     tm4c1294ncpdt_startup_ccs.obj (.text)
+                  00003f38    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00003f3c    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    00003f40    00000080     
+                  00003f40    00000080     main.obj (.const:seno)
+
+.cinit     0    00003fc0    00000038     
+                  00003fc0    0000000e     (.cinit..data.load) [load image, compression = lzss]
+                  00003fce    00000002     --HOLE-- [fill = 0]
+                  00003fd0    0000000c     (__TI_handler_table)
+                  00003fdc    00000004     --HOLE-- [fill = 0]
+                  00003fe0    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00003fe8    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.bss       0    20000200    0000005d     UNINITIALIZED
+                  20000200    00000010     (.common:data)
+                  20000210    00000004     (.common:a)
+                  20000214    00000004     (.common:adc0interr)
+                  20000218    00000004     (.common:adcflag)
+                  2000021c    00000004     (.common:frecprom)
+                  20000220    00000004     (.common:frecsel)
+                  20000224    00000004     (.common:frecuencia)
+                  20000228    00000004     (.common:i)
+                  2000022c    00000004     (.common:inter)
+                  20000230    00000004     (.common:modo)
+                  20000234    00000004     (.common:muestrasADC)
+                  20000238    00000004     (.common:nota)
+                  2000023c    00000004     (.common:octava)
+                  20000240    00000004     (.common:pdint)
+                  20000244    00000004     (.common:periodo)
+                  20000248    00000004     (.common:plint)
+                  2000024c    00000004     (.common:samples)
+                  20000250    00000004     (.common:semi)
+                  20000254    00000004     (.common:sumafrec)
+                  20000258    00000004     (.common:uartinterr)
+                  2000025c    00000001     (.common:error)
+
+.data      0    20000260    00000010     UNINITIALIZED
+                  20000260    00000010     main.obj (.data)
+
+.stack     0    20000000    00000200     UNINITIALIZED
+                  20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000004    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                          code    ro data   rw data
+       ------                          ----    -------   -------
+    ./
+       main.obj                        13708   128       109    
+       tm4c1294ncpdt_startup_ccs.obj   12      520       0      
+    +--+-------------------------------+-------+---------+---------+
+       Total:                          13720   648       109    
+                                                                
+    /Applications/ti/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/lib/rtsv7M4_T_le_v4SPD16_eabi.lib
+       fd_add_t2.asm.obj               438     0         0      
+       fd_cmp_t2.asm.obj               268     0         0      
+       fd_mul_t2.asm.obj               252     0         0      
+       s_floor.c.obj                   248     0         0      
+       s_round.c.obj                   196     0         0      
+       memcpy_t2.asm.obj               156     0         0      
+       copy_decompress_lzss.c.obj      104     0         0      
+       fd_toi_t2.asm.obj               72      0         0      
+       autoinit.c.obj                  68      0         0      
+       boot_cortex_m.c.obj             52      0         0      
+       i_tofd_t2.asm.obj               46      0         0      
+       copy_zero_init.c.obj            28      0         0      
+       copy_decompress_none.c.obj      14      0         0      
+       exit.c.obj                      4       0         0      
+       pre_init.c.obj                  4       0         0      
+    +--+-------------------------------+-------+---------+---------+
+       Total:                          1950    0         0      
+                                                                
+       Stack:                          0       0         512    
+       Linker Generated:               0       50        0      
+    +--+-------------------------------+-------+---------+---------+
+       Grand Total:                    15670   698       621    
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00003fe8 records: 2, size/record: 8, table size: 16
+	.data: load addr=00003fc0, load size=0000000e bytes, run addr=20000260, run size=00000010 bytes, compression=lzss
+	.bss: load addr=00003fe0, load size=00000008 bytes, run addr=20000200, run size=0000005d bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00003fd0 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                          
+-------   ----                          
+00001fe9  ADCInit                       
+000027a9  ADCSequence2_Handler          
+20000260  AdreSSD1306                   
+00003f3d  C$$EXIT                       
+20000264  ControlbC                     
+20000268  ControlbD                     
+00003459  DatosDisplay                  
+000019bd  DosPuntos                     
+000019d3  Espacio                       
+0000128b  Figura_blanca                 
+000013b1  Figura_blancacp               
+00001723  Figura_corchea                
+000014d7  Figura_negra                  
+000015fd  Figura_negracp                
+00001165  Figura_redonda                
+00001849  Figura_semicorchea            
+00002a49  GPIOPortD_Handler             
+00002fa1  GPIOPortL_Handler             
+0000246f  GPIO_Init                     
+0000196f  Grado                         
+00001fd1  I2CInit                       
+00000209  I2C_Init                      
+0000042b  Letra_A                       
+0000044d  Letra_B                       
+0000046f  Letra_C                       
+00000491  Letra_D                       
+000004b3  Letra_E                       
+000004d5  Letra_F                       
+000004f7  Letra_G                       
+00000519  Letra_H                       
+0000053b  Letra_I                       
+00000557  Letra_J                       
+00000591  Letra_K                       
+000005c9  Letra_L                       
+000005eb  Letra_M                       
+00000613  Letra_N                       
+0000063b  Letra_O                       
+00000665  Letra_P                       
+000010e3  Letra_PZOTA                   
+00000699  Letra_Q                       
+000006bb  Letra_R                       
+000006dd  Letra_S                       
+000006ff  Letra_T                       
+0000072d  Letra_U                       
+0000074f  Letra_V                       
+00000771  Letra_W                       
+00000799  Letra_X                       
+000007bb  Letra_Y                       
+000007d7  Letra_Z                       
+0000094d  Nota_A                        
+00000a43  Nota_B                        
+00000b39  Nota_C                        
+00000c2f  Nota_D                        
+00000d25  Nota_E                        
+00000e1b  Nota_F                        
+00000f11  Nota_G                        
+00001075  Nota_bemol                    
+00001007  Nota_sostenido                
+000007f9  Numero_0                      
+0000081b  Numero_1                      
+0000083d  Numero_2                      
+0000085f  Numero_3                      
+00000881  Numero_4                      
+000008a3  Numero_5                      
+000008c5  Numero_6                      
+000008e7  Numero_7                      
+00000909  Numero_8                      
+0000092b  Numero_9                      
+0000198b  Punto                         
+00003f2d  ResetISR                      
+000019f5  SSD1306_Clear                 
+0000031f  SSD1306_Command               
+000003a5  SSD1306_Data                  
+00000267  SSD1306_Init                  
+00001a87  SSD1306_SCROLLINGL            
+00001abb  SSD1306_SCROLLINGR            
+00001aef  SSD1306_WriteChar             
+00001e03  SSD1306_WriteString           
+00001f2d  SSI0_init                     
+00001fad  SSI0_sendData                 
+2000026c  TPR                           
+00002915  Timer02AIntHandler            
+00002999  Timer03AIntHandler            
+00002351  TimersInit                    
+000025c1  UART7_Handler                 
+00001e59  UARTInit                      
+20000200  __STACK_END                   
+00000200  __STACK_SIZE                  
+20000200  __STACK_TOP                   
+00003fe8  __TI_CINIT_Base               
+00003ff8  __TI_CINIT_Limit              
+00003fd0  __TI_Handler_Table_Base       
+00003fdc  __TI_Handler_Table_Limit      
+00003e5d  __TI_auto_init_nobinit_nopinit
+00003dad  __TI_decompress_lzss          
+00003f1f  __TI_decompress_none          
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+00000000  __TI_static_base__            
+00003f03  __TI_zero_init_nomemset       
+00003ca1  __aeabi_cdcmpeq               
+00003ca1  __aeabi_cdcmple               
+00003d27  __aeabi_cdrcmple              
+00003e15  __aeabi_d2iz                  
+0000379f  __aeabi_dadd                  
+0000394b  __aeabi_dmul                  
+00003795  __aeabi_dsub                  
+00003ed5  __aeabi_i2d                   
+00003c05  __aeabi_memcpy                
+00003c05  __aeabi_memcpy4               
+00003c05  __aeabi_memcpy8               
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+UNDEFED   __mpu_init                    
+20000000  __stack                       
+20000000  __start___llvm_prf_cnts       
+20000000  __stop___llvm_prf_cnts        
+00003ea1  _c_int00_noargs               
+UNDEFED   _system_post_cinit            
+00003f39  _system_pre_init              
+20000210  a                             
+00003f3d  abort                         
+20000214  adc0interr                    
+20000218  adcflag                       
+ffffffff  binit                         
+20000200  data                          
+000020fb  displayInit                   
+000019a1  dosPuntos                     
+2000025c  error                         
+000002ff  esperar                       
+00003a49  floor                         
+00003a49  floorl                        
+2000021c  frecprom                      
+20000220  frecsel                       
+20000224  frecuencia                    
+00000000  g_pfnVectors                  
+20000228  i                             
+2000022c  inter                         
+00001e39  main                          
+00003c05  memcpy                        
+20000230  modo                          
+20000234  muestrasADC                   
+20000238  nota                          
+2000023c  octava                        
+20000240  pdint                         
+20000244  periodo                       
+00002279  pianoInit                     
+20000248  plint                         
+00003b41  round                         
+00003b41  roundl                        
+2000024c  samples                       
+20000250  semi                          
+00003f40  seno                          
+00002541  sequenceInit                  
+20000254  sumafrec                      
+20000258  uartinterr                    
+000021dd  vozInit                       
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                          
+-------   ----                          
+00000000  __TI_static_base__            
+00000000  g_pfnVectors                  
+00000200  __STACK_SIZE                  
+00000209  I2C_Init                      
+00000267  SSD1306_Init                  
+000002ff  esperar                       
+0000031f  SSD1306_Command               
+000003a5  SSD1306_Data                  
+0000042b  Letra_A                       
+0000044d  Letra_B                       
+0000046f  Letra_C                       
+00000491  Letra_D                       
+000004b3  Letra_E                       
+000004d5  Letra_F                       
+000004f7  Letra_G                       
+00000519  Letra_H                       
+0000053b  Letra_I                       
+00000557  Letra_J                       
+00000591  Letra_K                       
+000005c9  Letra_L                       
+000005eb  Letra_M                       
+00000613  Letra_N                       
+0000063b  Letra_O                       
+00000665  Letra_P                       
+00000699  Letra_Q                       
+000006bb  Letra_R                       
+000006dd  Letra_S                       
+000006ff  Letra_T                       
+0000072d  Letra_U                       
+0000074f  Letra_V                       
+00000771  Letra_W                       
+00000799  Letra_X                       
+000007bb  Letra_Y                       
+000007d7  Letra_Z                       
+000007f9  Numero_0                      
+0000081b  Numero_1                      
+0000083d  Numero_2                      
+0000085f  Numero_3                      
+00000881  Numero_4                      
+000008a3  Numero_5                      
+000008c5  Numero_6                      
+000008e7  Numero_7                      
+00000909  Numero_8                      
+0000092b  Numero_9                      
+0000094d  Nota_A                        
+00000a43  Nota_B                        
+00000b39  Nota_C                        
+00000c2f  Nota_D                        
+00000d25  Nota_E                        
+00000e1b  Nota_F                        
+00000f11  Nota_G                        
+00001007  Nota_sostenido                
+00001075  Nota_bemol                    
+000010e3  Letra_PZOTA                   
+00001165  Figura_redonda                
+0000128b  Figura_blanca                 
+000013b1  Figura_blancacp               
+000014d7  Figura_negra                  
+000015fd  Figura_negracp                
+00001723  Figura_corchea                
+00001849  Figura_semicorchea            
+0000196f  Grado                         
+0000198b  Punto                         
+000019a1  dosPuntos                     
+000019bd  DosPuntos                     
+000019d3  Espacio                       
+000019f5  SSD1306_Clear                 
+00001a87  SSD1306_SCROLLINGL            
+00001abb  SSD1306_SCROLLINGR            
+00001aef  SSD1306_WriteChar             
+00001e03  SSD1306_WriteString           
+00001e39  main                          
+00001e59  UARTInit                      
+00001f2d  SSI0_init                     
+00001fad  SSI0_sendData                 
+00001fd1  I2CInit                       
+00001fe9  ADCInit                       
+000020fb  displayInit                   
+000021dd  vozInit                       
+00002279  pianoInit                     
+00002351  TimersInit                    
+0000246f  GPIO_Init                     
+00002541  sequenceInit                  
+000025c1  UART7_Handler                 
+000027a9  ADCSequence2_Handler          
+00002915  Timer02AIntHandler            
+00002999  Timer03AIntHandler            
+00002a49  GPIOPortD_Handler             
+00002fa1  GPIOPortL_Handler             
+00003459  DatosDisplay                  
+00003795  __aeabi_dsub                  
+0000379f  __aeabi_dadd                  
+0000394b  __aeabi_dmul                  
+00003a49  floor                         
+00003a49  floorl                        
+00003b41  round                         
+00003b41  roundl                        
+00003c05  __aeabi_memcpy                
+00003c05  __aeabi_memcpy4               
+00003c05  __aeabi_memcpy8               
+00003c05  memcpy                        
+00003ca1  __aeabi_cdcmpeq               
+00003ca1  __aeabi_cdcmple               
+00003d27  __aeabi_cdrcmple              
+00003dad  __TI_decompress_lzss          
+00003e15  __aeabi_d2iz                  
+00003e5d  __TI_auto_init_nobinit_nopinit
+00003ea1  _c_int00_noargs               
+00003ed5  __aeabi_i2d                   
+00003f03  __TI_zero_init_nomemset       
+00003f1f  __TI_decompress_none          
+00003f2d  ResetISR                      
+00003f39  _system_pre_init              
+00003f3d  C$$EXIT                       
+00003f3d  abort                         
+00003f40  seno                          
+00003fd0  __TI_Handler_Table_Base       
+00003fdc  __TI_Handler_Table_Limit      
+00003fe8  __TI_CINIT_Base               
+00003ff8  __TI_CINIT_Limit              
+20000000  __stack                       
+20000000  __start___llvm_prf_cnts       
+20000000  __stop___llvm_prf_cnts        
+20000200  __STACK_END                   
+20000200  __STACK_TOP                   
+20000200  data                          
+20000210  a                             
+20000214  adc0interr                    
+20000218  adcflag                       
+2000021c  frecprom                      
+20000220  frecsel                       
+20000224  frecuencia                    
+20000228  i                             
+2000022c  inter                         
+20000230  modo                          
+20000234  muestrasADC                   
+20000238  nota                          
+2000023c  octava                        
+20000240  pdint                         
+20000244  periodo                       
+20000248  plint                         
+2000024c  samples                       
+20000250  semi                          
+20000254  sumafrec                      
+20000258  uartinterr                    
+2000025c  error                         
+20000260  AdreSSD1306                   
+20000264  ControlbC                     
+20000268  ControlbD                     
+2000026c  TPR                           
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+ffffffff  binit                         
+UNDEFED   __mpu_init                    
+UNDEFED   _system_post_cinit            
+
+[158 symbols]
